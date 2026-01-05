@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Tic-Tac-Toe — Welcome</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <main class="home">
+    <h1><b>Welcome to Tic-Tac-Toe Game</b></h1>
+    <div class="player-inputs">
+      <input type="text" id="player1" placeholder="Enter Player 1 Name"/>
+      <input type="text" id="player2" placeholder="Enter Player 2 Name"/>
+      <button id="start-btn">Start Game</button>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('start-btn').addEventListener('click', () => {
+      const p1 = document.getElementById('player1').value.trim() || 'Player 1';
+      const p2 = document.getElementById('player2').value.trim() || 'Player 2';
+      localStorage.setItem('p1', p1);
+      localStorage.setItem('p2', p2);
+      // clear any old result
+      localStorage.removeItem('result');
+      window.location.href = 'game.html';
+    });
+  </script>
+  <script src="home.js"></script>
+
+</body>
+</html>
